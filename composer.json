@@ -1,0 +1,25 @@
+{
+    "name": "lighturl/lighturl",
+    "description": "Open Source Url Shortener",
+	"homepage": "https://lighturl.in",
+	"support": {
+        "issues": "https://github.com/lighturl/lighturl/issues",
+        "source": "https://github.com/lighturl/lighturl"
+    },
+    "keywords": ["shortener","url-shortener", "url", "cms"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Engin Kartal",
+            "email": "enginkartal.projects@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.6.4",
+        "illuminate/database": "5.2.*",
+        "hashids/hashids": "^1.0"
+    },
+    "autoload": {
+        "psr-4": {"LightUrl\\": "src/LightUrl"}
+    }
+}
