@@ -48,7 +48,7 @@ class Light
 
     private function storeLightUrl($heavyUrl,$shortKey){
 
-        $status = $this->defaultConnection->table('lu_url')->insert(['heavy_url'=>$heavyUrl,'short_key'=>$shortKey,'user'=>1]);
+        $status = $this->defaultConnection->table('lu_url')->insert(['heavy_url'=>$heavyUrl,'short_key'=>$shortKey,'user'=>0]);
 
         if($status){
             return $this->checkDBExists($heavyUrl);
