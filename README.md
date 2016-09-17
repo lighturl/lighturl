@@ -28,7 +28,7 @@ Coming soon
 ``` php
 require 'vendor/autoload.php';
 use Illuminate\Database\Capsule\Manager as Capsule;
-use LightUrl\Light;
+use LightUrl\LightUrl;
 ```
 
 ``` php
@@ -55,11 +55,18 @@ $capsule = new Capsule;
 ``` 
 
 ``` php
-$light = new Light($connection);
+$light = new LightUrl($connection);
+
+if(isset($_GET['shortkey'])){
+
+     $light->redirectTo($_GET['shortkey']);
+
+}else {
 
 $key = $light->lighten($heavyUrl);
 
 echo $key;
+}
 ```
 
 ## Changelog

@@ -5,7 +5,7 @@ namespace LightUrl;
 use Illuminate\Database\ConnectionInterface;
 use Hashids\Hashids;
 
-class Light
+class LightUrl
 {
     protected $connection;
     private $defaultConnection;
@@ -28,6 +28,18 @@ class Light
          $shortKey = $this->preShortKey($heavyUrl);
 
         return $this->storeLightUrl($heavyUrl,$shortKey)->short_key;
+    }
+
+    public function redirectTo($shortKey){
+
+        $url = $this->defaultConnection->table('lu_url')->where('short_key',$shortKey)->first();
+
+        if($url) {
+            header("Location: $url->heavy_url", true, 301);
+        }else {
+            header("Location: 404.php", true, 404);
+        }
+
     }
 
     private function checkUrlFormat($heavyUrl) {
