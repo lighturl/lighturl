@@ -1,6 +1,8 @@
 # lighturl
 Open Source Url Shortener
 
+[![Build Status](https://travis-ci.org/lighturl/lighturl.svg?branch=master)](https://travis-ci.org/lighturl/lighturl)
+
 ### Requirements
   - PHP 5.6.4+
 
