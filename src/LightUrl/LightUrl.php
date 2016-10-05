@@ -34,12 +34,16 @@ class LightUrl
 
         $url = $this->defaultConnection->table('lu_url')->where('short_key',$shortKey)->first();
 
-        if($url) {
+        $redirectUrl='404.php';
+
+        if(isset($url)) {
             header("Location: $url->heavy_url", true, 301);
+            $redirectUrl = $url->heavy_url;
         }else {
             header("Location: 404.php", true, 404);
         }
 
+        return $redirectUrl;
     }
 
     private function checkUrlFormat($heavyUrl) {
